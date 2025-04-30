@@ -33,4 +33,19 @@ async function globalSetup() {
       },
     });
 
-    // Entradas vendidas (solo si se vendieron algunas
+    // Entradas vendidas (solo si se vendieron algunas)
+    const vendidas = Math.floor(Math.random() * 100);
+    if (vendidas > 0) {
+      await prisma.entradasVendidas.create({
+        data: {
+          recitalId: recital.id,
+          cantidad: vendidas,
+        },
+      });
+    }
+  }
+
+  console.log("10 recitales de artistas pop insertados correctamente.");
+}
+
+export default globalSetup;
