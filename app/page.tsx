@@ -3,9 +3,12 @@ import { ArrowRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { ConcertCard } from "@/components/concert-card"
-import { concerts } from "@/lib/data"
+import { obtenerRecitales } from "@/lib/data"
 
-export default function Home() {
+
+export default async function Home() {
+  const concert = await obtenerRecitales()
+  
   return (
     <div className="container mx-auto px-4 py-12">
       <section className="mb-12 text-center">
@@ -16,7 +19,7 @@ export default function Home() {
       </section>
 
       <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {concerts.map((concert) => (
+        {concert.map((concert) => (
           <ConcertCard key={concert.id} concert={concert} />
         ))}
       </section>

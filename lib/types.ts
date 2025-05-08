@@ -1,4 +1,4 @@
-export interface Concert {
+export interface obetnerRecitales {
   id: string
   name: string
   date: string
