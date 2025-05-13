@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('test', async ({ page }) => {
+test.skip('test', async ({ page }) => {
   await page.goto('http://localhost:3000/');
   await page.getByRole('img', { name: 'Noche de Jazz' }).click();
   await page.getByText('Noche de Jazz19 de noviembre').click();

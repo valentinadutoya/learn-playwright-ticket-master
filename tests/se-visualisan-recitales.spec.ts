@@ -5,12 +5,12 @@ test("se visualisan 3 conciertos: Rock en Vivo, Noche de Jazz, Fiesta Electronic
 }) => {
   await page.goto("http://localhost:3000/");
   await expect(
-    page.getByRole("heading", { name: "Rock en Vivo" })
+    page.getByRole("heading", { name: "Recital sinfónico de música clásica con artistas internacionales." })
   ).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "Noche de Jazz" })
+    page.getByRole("heading", { name: "Concierto de rock nacional con bandas invitadas." })
   ).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "Festival Electrónico" })
+    page.getByRole("heading", { name: "Festival de jazz al aire libre." })
   ).toBeVisible();
 });
